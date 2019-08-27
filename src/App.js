@@ -5,10 +5,7 @@ import './assets/style.css'
 
 function App() {
   return (
-    <div className="flex flex-row">
-      <div className="font-bold text-blue-500">
-        Hi everyone
-      </div>
+    <div>
     </div>
   )
 }

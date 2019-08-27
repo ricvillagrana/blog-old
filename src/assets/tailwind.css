@@ -1,5 +1,37 @@
 @tailwind base;
 
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,500,900&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+a {
+  @apply text-primary-300;
+  transition-duration: 0.2s;
+}
+
+a:hover {
+  @apply text-primary-500 underline;
+}
+
+.transition {
+  transition-duration: 0.2s;
+}
+
+.transition-long {
+  transition-duration: 0.5s;
+}
+
+.modal-closed {
+  right: -100%!important;
+}
+
 @tailwind components;
 
 @tailwind utilities;
