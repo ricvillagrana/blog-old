@@ -8,7 +8,7 @@ const HamburguerMenu = (props) => (
     </span>
     <div className="flex flex-col items-center">
       {props.menu.map(item => (
-        <Link onClick={props.switchModal} to={item.link} className="py-2 w-full text-center uppercase font-bold text-white hover:text-gray-100 text-md">
+        <Link key={props.menu.indexOf(item)} onClick={props.switchModal} to={item.link} className="py-2 w-full text-center uppercase font-bold text-white hover:text-gray-100 text-md">
           {item.text}
         </Link>
       ))}
@@ -47,21 +47,19 @@ class Layout extends React.Component {
     const { menu, modal } = this.state
 
     return (
-      <div className="flex flex-col items-center md:items-start m-6 mt-0 w-full md:w-3/5 mx-auto">
+      <div className="flex flex-col items-start md:items-start m-6 mt-0 w-full md:w-3/5 mx-auto">
         <span onClick={this.switchModal} className="flex self-end top-0 pt-8 pr-6 cursor-pointer md:hidden">
           Menu
         </span>
 
         <div className="flex flex-row md:pt-8 items-baseline">
-          <div className="font-bold text-2xl my-2 cursor-pointer">
-            <a className="text-black hover:text-gray-800" href="https://ricvillagrana.me">ricvillagrana</a>
-            <span className="mx-3">|</span>
-            <Link className="text-black hover:text-gray-800" to="/">blog</Link>
+          <div className="font-bold text-2xl mb-3 -mt-10 px-6 cursor-pointer">
+            <Link className="text-black hover:text-gray-800" to="/">Blog | ricvillagrana</Link>
           </div>
 
           <div className="hidden md:flex mx-8">
             {menu.map(item => (
-              <Link to={item.link} className="mx-4 uppercase font-bold text-gray-700 hover:text-gray-800">
+              <Link key={menu.indexOf(item)} to={item.link} className="mx-4 uppercase font-bold text-gray-700 hover:text-gray-800">
                 {item.text}
               </Link>
             ))}
@@ -70,7 +68,9 @@ class Layout extends React.Component {
 
         <HamburguerMenu className="flex md:hidden" menu={menu} open={modal.open} switchModal={this.switchModal} />
 
-        {this.props.children}
+        <div className="flex flex-col justify-start items-start text-justify w-full p-6">
+          {this.props.children}
+        </div>
       </div>
     )
   }

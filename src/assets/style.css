@@ -616,6 +616,26 @@ a:hover {
   transform: rotateY(90deg);
 }
 
+.title {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.sub-title {
+  font-weight: 700;
+  color: #718096;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.content {
+  color: #4a5568;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 .container {
   width: 100%;
 }

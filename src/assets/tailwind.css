@@ -33,6 +33,18 @@ a:hover {
   transform: rotateY(90deg);
 }
 
+.title {
+  @apply font-bold text-gray-800 text-lg mb-4;
+}
+
+.sub-title {
+  @apply font-bold text-gray-600 text-base mb-2;
+}
+
+.content {
+  @apply text-gray-700 text-base mb-6;
+}
+
 @tailwind components;
 
 @tailwind utilities;
