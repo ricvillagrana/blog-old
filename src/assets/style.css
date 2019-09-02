@@ -593,12 +593,12 @@ html, body {
   height: 100%;
 }
 
-a {
+.link {
   color: #3387ff;
   transition-duration: 0.2s;
 }
 
-a:hover {
+.link:hover {
   color: #0069ff;
   text-decoration: underline;
 }

@@ -11,12 +11,12 @@ html, body {
   height: 100%;
 }
 
-a {
+.link {
   @apply text-primary-300;
   transition-duration: 0.2s;
 }
 
-a:hover {
+.link:hover {
   @apply text-primary-500 underline;
 }
 

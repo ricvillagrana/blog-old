@@ -7,7 +7,7 @@ class Layout extends React.Component {
       <div>
         <div className="title">About</div>
         <div className="content">
-          My name is Ricardo Villagrana also (<a href="https://twitter.com/ricvillagrana" target="_blank">@ricvillagrana</a>), I am a full-stack developer focusing on Ruby on Rail, Node.js and React.js (I also like and use Vue.js).
+          My name is Ricardo Villagrana (<a href="https://twitter.com/ricvillagrana" rel="noopener noreferrer" target="_blank" className="link">@ricvillagrana</a>), I am a full-stack developer focusing on Ruby on Rails, Node.js and React.js (I also like and use Vue.js).
         </div>
 
         <div>
