@@ -20,7 +20,7 @@ const BackToTop = () => (
     top: 0,
     behavior: 'smooth'
   })}>
-    🔝 BACK TO TOP 🔝
+    GO TOP
     <span className="text-5xl font-black">RV</span>
   </div>
 )
@@ -54,7 +54,7 @@ class Post extends React.Component {
     const { post } = this.state
 
     return (
-      <div className="w-full p-4">
+      <div className="w-full p-4 px-0">
         <header className="mb-6">
           <div className="text-4xl font-bold">
             {post.title}
@@ -69,7 +69,14 @@ class Post extends React.Component {
         <ReactMarkdown
           source={post.body}
           renderers={{
-            link: RouterLink
+            link: RouterLink,
+            image: (props) => {
+              const src = require(`../../content/${post.slug}/${props.src}`)
+
+              return (
+                <img src={src} alt={props.alt} title={props.alt} />
+              )
+            }
           }}
           escapeHtml={false} />
 

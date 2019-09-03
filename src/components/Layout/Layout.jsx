@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const HamburguerMenu = (props) => (
-  <div className={`modal-${props.open ? 'open' : 'closed'} transition-long flex md:hidden flex-col top-0 right-0 absolute bg-black h-full w-full`}>
+  <div className={`modal-${props.open ? 'open' : 'closed'} transition-long flex md:hidden flex-col top-0 right-0 bg-black h-full w-full fixed`}>
     <div className="font-bold text-2xl mb-3 mt-8 px-6 cursor-pointer">
       <Link className="text-white font-bold hover:text-gray-100" onClick={props.switchModal} to="/">Blog | ricvillagrana</Link>
     </div>
@@ -51,7 +51,7 @@ class Layout extends React.Component {
     const { menu, modal } = this.state
 
     return (
-      <div className="flex flex-col items-start md:items-start m-6 mt-0 w-full md:w-3/5 mx-auto">
+      <div className="flex flex-col items-start md:items-start m-6 mt-0 w-full md:w-3/5 lg:w-1/2 mx-auto">
         <span onClick={this.switchModal} className="flex self-end top-0 pt-8 pr-6 cursor-pointer md:hidden">
           Menu
         </span>

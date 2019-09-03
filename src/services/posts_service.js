@@ -9,7 +9,7 @@ class PostService {
   async process() {
     await this.processPosts()
 
-    return this.posts
+    return this.posts.sort((a, b) => new Date(b.date) - new Date(a.date))
   }
 
   async processPosts() {

@@ -14,9 +14,8 @@
 @media screen and (max-width: 768px) {
   .prettyprint {
     background: #2f3640;
-    float: left;
-    width: 127%;
-    margin-left: -40px;
+    width: 115%;
+    margin-left: -25px;
     border-radius: 0px!important;
   }
 }

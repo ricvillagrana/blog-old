@@ -10,7 +10,7 @@ const Post = props => {
   const { post } = props
 
   return (
-    <Link to={`posts/${post.slug}`} className="w-full mb-6 p-4 cursor-pointer rounded text-gray-800 hover:text-gray-900 hover:no-underline hover:bg-gray-200 transition">
+    <Link to={`posts/${post.slug}`} className="w-full mb-2 p-4 cursor-pointer rounded text-gray-800 hover:text-gray-900 hover:no-underline hover:bg-gray-200 transition">
       <div className="text-xl font-bold">
         {post.title}
         <span className="text-sm mx-2 font-medium text-gray-500" title={moment(post.date).format('LLLL')}>{moment(post.date).fromNow()}</span>

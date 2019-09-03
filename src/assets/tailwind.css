@@ -52,7 +52,7 @@ iframe {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold;
+  @apply font-bold mt-10;
 }
 
 h1 { @apply text-3xl; }
@@ -84,6 +84,33 @@ table {
 th, td {
   @apply p-2;
 }
+
+blockquote {
+  @apply p-4 border-l-4 border-gray-300 my-4;
+}
+
+blockquote p {
+  @apply m-0 text-gray-600;
+}
+
+code:not([class^="language-"]) {
+  @apply bg-gray-300 text-primary-500 rounded;
+  padding: 2px 4px;
+}
+
+img {
+  @apply rounded my-6 shadow-lg w-full;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    width: 115%;
+    max-width: 115%;
+    margin-left: -25px;
+    border-radius: 0px!important;
+  }
+}
+
 
 @tailwind components;
 
