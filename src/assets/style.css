@@ -729,9 +729,9 @@ img {
 
 @media screen and (max-width: 768px) {
   img {
-    width: 115%;
-    max-width: 115%;
-    margin-left: -25px;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: -24px;
     border-radius: 0px!important;
   }
 }
