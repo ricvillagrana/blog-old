@@ -1,6 +1,6 @@
 @tailwind base;
 
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono|Poppins:200,500,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,500,600,700,900&display=swap');
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -46,10 +46,6 @@ a:hover {
 }
 
 /* Markdown */
-iframe {
-  @apply w-full my-6 shadow-lg;
-  height: 400px;
-}
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-bold;
@@ -60,29 +56,8 @@ h2 { @apply text-2xl; }
 h3 { @apply text-xl; }
 h4 { @apply text-lg; }
 
-p {
-  @apply mb-6 text-gray-700;
-}
-
-ul {
-  @apply mb-6 pl-8;
-  list-style: disc;
-}
-
-pre {
-  @apply bg-gray-800 rounded p-4 text-white mb-6 shadow-lg;
-}
-
-table, td, th {
-  @apply text-left border border-gray-400 rounded;
-}
-
-table {
-  @apply w-full mb-6;
-}
-
-th, td {
-  @apply p-2;
+p,ul {
+  @apply my-4;
 }
 
 @tailwind components;

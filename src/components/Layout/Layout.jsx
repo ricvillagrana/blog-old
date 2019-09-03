@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom'
 
 const HamburguerMenu = (props) => (
   <div className={`modal-${props.open ? 'open' : 'closed'} transition-long flex md:hidden flex-col top-0 right-0 absolute bg-black h-full w-full`}>
-    <span onClick={props.switchModal} className="flex justify-end text-white pt-8 pr-6 cursor-pointer">
+    <div className="font-bold text-2xl mb-3 mt-8 px-6 cursor-pointer">
+      <Link className="text-white font-bold hover:text-gray-100" onClick={props.switchModal} to="/">Blog | ricvillagrana</Link>
+    </div>
+
+    <span onClick={props.switchModal} className="flex self-end absolute top-0 text-white pt-8 pr-6 cursor-pointer md:hidden">
       Close
     </span>
+
     <div className="flex flex-col items-center">
       {props.menu.map(item => (
         <Link key={props.menu.indexOf(item)} onClick={props.switchModal} to={item.link} className="py-2 w-full text-center uppercase font-bold text-white hover:text-gray-100 text-md">
@@ -53,7 +58,7 @@ class Layout extends React.Component {
 
         <div className="flex flex-row md:pt-8 items-baseline">
           <div className="font-bold text-2xl mb-3 -mt-10 px-6 cursor-pointer">
-            <Link className="text-black hover:text-gray-800" to="/">Blog | ricvillagrana</Link>
+            <Link className="text-black font-bold hover:text-gray-800" to="/">Blog | ricvillagrana</Link>
           </div>
 
           <div className="hidden md:flex mx-8">

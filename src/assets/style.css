@@ -582,7 +582,7 @@ video {
   height: auto;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,500,600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono|Poppins:200,500,600,700,900&display=swap');
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -593,12 +593,12 @@ html, body {
   height: 100%;
 }
 
-.link {
+a {
   color: #3387ff;
   transition-duration: 0.2s;
 }
 
-.link:hover {
+a:hover {
   color: #0069ff;
   text-decoration: underline;
 }
@@ -634,6 +634,68 @@ html, body {
   color: #4a5568;
   font-size: 1rem;
   margin-bottom: 1.5rem;
+}
+
+/* Markdown */
+
+iframe {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  height: 400px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 { font-size: 1.875rem;
+}
+
+h2 { font-size: 1.5rem;
+}
+
+h3 { font-size: 1.25rem;
+}
+
+h4 { font-size: 1.125rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+}
+
+ul {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+  list-style: disc;
+}
+
+pre {
+  background-color: #2d3748;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+table, td, th {
+  text-align: left;
+  border-width: 1px;
+  border-color: #cbd5e0;
+  border-radius: 0.25rem;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  padding: 0.5rem;
 }
 
 .container {
