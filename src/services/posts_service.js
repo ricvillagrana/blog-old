@@ -37,7 +37,9 @@ class PostService {
 
     for(let i = starts + 1; i < ends; i++) {
       const [key, value] = lines[i].split(': ')
-      vars[key] = value
+      vars[key] = key === 'tags'
+        ? value.split(',')
+        : value
     }
 
     vars.bodyStarts = ends + 1

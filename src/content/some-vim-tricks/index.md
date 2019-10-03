@@ -3,6 +3,7 @@ slug: some-vim-tricks
 title: Some Vim tricks 😎
 date: 2019-09-03T17:07:16-05:00
 description: Some cool tricks that will help you to be even faster in Vim and understand what is happening when you use them.
+tags: vim,tooling
 ---
 
 Vim is a text editor that was released in 1991, it is a clone of Vi but *improved*, that is what the "m" means, Vi iMproved (ViM).

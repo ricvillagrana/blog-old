@@ -62,6 +62,9 @@ class Post extends React.Component {
           </div>
 
           <div className="text-sm text-gray-600">{post.description}</div>
+          <div className="my-2">
+            {post.tags && post.tags.map(tag => <Link to={`/tag/${tag}`} key={tag} className="tag">{tag}</Link>)}
+          </div>
 
           <hr />
         </header>
