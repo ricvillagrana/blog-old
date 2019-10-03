@@ -11,9 +11,9 @@ const Post = props => {
 
   return (
     <Link to={`posts/${post.slug}`} className="w-full mb-2 p-4 cursor-pointer rounded text-gray-800 hover:text-gray-900 hover:no-underline hover:bg-gray-200 transition">
-      <div className="text-xl font-bold">
+      <div className="flex flex-col md:flex-row text-xl font-bold items-baseline text-black">
         {post.title}
-        <span className="text-sm mx-2 font-medium text-gray-500" title={moment(post.date).format('LLLL')}>{moment(post.date).fromNow()}</span>
+        <span className="text-sm md:mx-2 font-medium text-gray-500" title={moment(post.date).format('LLLL')}>{moment(post.date).fromNow()}</span>
       </div>
       <div className="text-sm text-gray-600">{post.description}</div>
     </Link>

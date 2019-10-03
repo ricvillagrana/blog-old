@@ -56,9 +56,9 @@ class Post extends React.Component {
     return (
       <div className="w-full p-4 px-0">
         <header className="mb-6">
-          <div className="text-4xl font-bold">
+          <div className="text-4xl font-bold flex flex-col md:flex-row items-baseline text-black">
             {post.title}
-            <span className="font-medium mx-2 text-sm text-gray-500" title={moment(post.date).format('LLLL')}>{moment(post.date).fromNow()}</span>
+            <span className="font-medium md:mx-2 text-sm text-gray-500" title={moment(post.date).format('LLLL')}>{moment(post.date).fromNow()}</span>
           </div>
 
           <div className="text-sm text-gray-600">{post.description}</div>
@@ -71,11 +71,11 @@ class Post extends React.Component {
           renderers={{
             link: RouterLink,
             image: (props) => {
-              const src = require(`../../content/${post.slug}/${props.src}`)
+              const src = props.src.match(/^https?.*/)
+                ? props.src
+                : require(`../../content/${post.slug}/${props.src}`)
 
-              return (
-                <img src={src} alt={props.alt} title={props.alt} />
-              )
+              return <img src={src} alt={props.alt} title={props.alt} />
             }
           }}
           escapeHtml={false} />

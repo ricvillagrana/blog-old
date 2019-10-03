@@ -13,6 +13,7 @@
 
 @media screen and (max-width: 768px) {
   .prettyprint {
+    font-size: 14px;
     background: #2f3640;
     width: 100vw;
     margin-left: -24px;

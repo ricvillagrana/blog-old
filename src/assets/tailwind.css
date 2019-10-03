@@ -52,7 +52,7 @@ iframe {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold mt-10;
+  @apply font-bold mt-10 text-black;
 }
 
 h1 { @apply text-3xl; }
@@ -60,7 +60,7 @@ h2 { @apply text-2xl; }
 h3 { @apply text-xl; }
 h4 { @apply text-lg; }
 
-p {
+p, ul {
   @apply mb-6 text-gray-700;
 }
 
@@ -89,7 +89,7 @@ blockquote {
   @apply p-4 border-l-4 border-gray-300 my-4;
 }
 
-blockquote p {
+blockquote * {
   @apply m-0 text-gray-600;
 }
 
