@@ -111,6 +111,15 @@ img {
   }
 }
 
+.tag {
+  @apply bg-gray-200 text-primary-200 rounded mr-2 text-xs cursor-pointer;
+  padding: 2px 4px;
+}
+
+.tag:hover {
+  @apply bg-gray-300 text-primary-400;
+  transition-duration: 0.2s;
+}
 
 @tailwind components;
 

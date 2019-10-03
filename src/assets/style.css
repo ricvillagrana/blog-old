@@ -737,6 +737,22 @@ img {
   }
 }
 
+.tag {
+  background-color: #edf2f7;
+  color: #4d96ff;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.tag:hover {
+  background-color: #e2e8f0;
+  color: #1a78ff;
+  transition-duration: 0.2s;
+}
+
 .container {
   width: 100%;
 }
