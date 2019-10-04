@@ -2,6 +2,7 @@
 import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import './App.css'
 import './assets/style.css'
 import PostsService from './services/posts_service'
@@ -16,7 +17,7 @@ const Post = props => {
         <span className="text-sm md:mx-2 font-medium text-gray-500" title={moment(post.date).format('LLLL')}>{moment(post.date).fromNow()}</span>
       </div>
       <div className="text-sm text-gray-600">{post.description}</div>
-      <div className="mt-2">
+      <div className="mt-2 flex flex-wrap">
         {post.tags && post.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
       </div>
     </Link>
@@ -58,10 +59,21 @@ class App extends React.Component {
   }
 
   render() {
-    const { posts } = this.state
+    const { posts, allPosts } = this.state
+    const { tag } = this.props.match.params
+    const postLink = `${window.location.origin}`
 
     return (
       <>
+        <Helmet>
+          <title>{'All posts | ricvillagrana'}</title>
+          <meta name="description" content="Ricardo Villagrana's blog" />
+          <meta property="og:title" content="ricvilagrana's Blog" />
+          <meta property="og:image" content={postLink} />
+          <meta name="author" content="Ricardo Villagrana"/>
+          <meta name="keywords" content="blog,website,personal,ricardo,villagrana,ricvillagrana"/>
+        </Helmet>
+        {posts && allPosts && allPosts.length !== posts.length && <p className="py-2">Filter: <span className="tag">{tag}</span></p>}
         {posts.map(post => <Post post={post} key={posts.indexOf(post)} />)}
       </>
     )

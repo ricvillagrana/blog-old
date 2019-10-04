@@ -3,7 +3,8 @@ slug: understanding-redux
 title: Understanding Redux
 date: 2019-10-03T13:30:16-05:00
 description: How does Redux work and why.
-tags: javascript,react,redux,design-patterns
+cover: redux-diagram.png
+tags: javascript,react,redux
 ---
  
 Redux is a *predictable* and *centralized* state container for JavaScript (not only React).

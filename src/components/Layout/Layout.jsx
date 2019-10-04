@@ -27,7 +27,6 @@ const HamburguerMenu = (props) => (
 const TagFilter = (props) => {
   const defaultName = 'All'
   const { tags, history } = props
-  const [selected, setSelected] = useState(defaultName)
   const [open, setOpen] = useState(false)
 
   const selectTag = (tag) => {
@@ -35,18 +34,17 @@ const TagFilter = (props) => {
       ? history.push('/')
       : history.push(`/tag/${tag}`)
 
-    setSelected(tag)
     setOpen(false)
   }
 
   return (
     <button onClick={() => setOpen(!open)} onBlur={() => setOpen(false)} className="flex flex-col self-end items-end w-full items-center md:w-auto border border-gray-300 rounded cursor-pointer py-1">
       <div className="w-full bg-white font-semibold text-gray-600 hover:text-gray-700 px-4">
-        {selected}
+        Filter
       </div>
       <div className="absolute mt-8 w-full left-0 self-end px-6 md:w-auto md:left-auto md:px-0">
         {open && (
-          <div className="w-full md:w-auto mt-2 py-2 bg-white border border-gray-300 shadow-lg rounded cursor-pointer">
+          <div className="w-full h-128 overflow-scroll md:w-auto mt-2 py-2 bg-white border border-gray-300 shadow-lg rounded cursor-pointer">
             <p onClick={() => selectTag(defaultName)} className="md:text-right mb-0 px-4 py-2 text-gray-600 hover:bg-gray-200 hover:text-primary-200">{defaultName}</p>
             {_.uniq(tags).map(tag => <p onClick={() => selectTag(tag)} className="md:text-right mb-0 px-4 py-2 text-gray-600 hover:bg-gray-200 hover:text-primary-200" key={tag}>{tag}</p>)}
           </div>

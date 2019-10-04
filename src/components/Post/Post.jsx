@@ -2,6 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import { Link }from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import { Helmet } from 'react-helmet'
 import prettify from 'google-code-prettify/bin/run_prettify.min.js'
 import PostsService from '../../services/posts_service'
 import 'google-code-prettify/bin/prettify.min.css'
@@ -42,19 +43,33 @@ class Post extends React.Component {
 
     this.setState({ post })
 
+    this.preparePreStyle()
+  }
+
+  preparePreStyle() {
     Array.prototype.slice.call(document.getElementsByTagName('pre')).forEach(codeTag => {
       codeTag.classList.add('prettyprint')
       codeTag.classList.add('linenums')
       codeTag.classList.add('nocode')
       codeTag.innerHTML = prettify.prettyPrintOne(codeTag.innerHTML)
     })
+
   }
 
   render() {
     const { post } = this.state
+    const postLink = `${window.location.origin}/static/media/`
 
     return (
       <div className="w-full p-4 px-0">
+        <Helmet>
+          <title>{`${post.title} | ricvillagrana`}</title>
+          <meta name="description" content={post.description} />
+          <meta property="og:title" content="ricvilagrana's Blog" />
+          <meta property="og:image" content={`${postLink}${post.cover}`} />
+          <meta name="author" content="Ricardo Villagrana"/>
+          <meta name="keywords" content={post.tags && post.tags.join(',')}/>
+        </Helmet>
         <header className="mb-6">
           <div className="text-4xl font-bold flex flex-col md:flex-row items-baseline text-black">
             {post.title}
